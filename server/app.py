@@ -34,9 +34,6 @@ codigos_vehiculos = {
     23: 'Furgoneta',
 }
 
-def predict_house_rent(model, dataframe):
-    predictions = model.predict(dataframe)
-    return predictions[0]
 
 def predict_car_type(model, dataframe):
     predictions = model.predict(dataframe)

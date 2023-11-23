@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS  # Importa CORS
 from keras.models import load_model
 
-car_type_model = load_model('modelo.h5')
+car_type_model = load_model('modelo4.h5')
 label_encoder_cargado = joblib.load('label_encoder.pkl')
 
 codigos_vehiculos = {
@@ -32,7 +32,6 @@ codigos_vehiculos = {
     21: 'Bus militar',
     22: 'Cuatrimoto',
     23: 'Furgoneta',
-    99: 'Ignorado'
 }
 
 def predict_house_rent(model, dataframe):
@@ -58,10 +57,12 @@ def getModel():
             return jsonify({'error': 'El cuerpo de la solicitud debe contener datos JSON'}), 400
 
         input_data = {
-            'color_veh': [data.get('color_veh', 7)],
-            'mayor_menor': [data.get('mayor_menor', 1)],
-            'edad_per': [data.get('edad_per', 37)],
-            'sexo_per': [data.get('sexo_per', 1)],
+            'estado_con': [data.get('estado_con', 1)],
+            'mes_ocu': [data.get('mes_ocu', 1)],
+            'hora_ocu': [data.get('edad_per', 1)],
+            'dia_ocu': [data.get('sexo_per', 10)],
+            'tipo_evento': [data.get('tipo_evento', 1)],
+            "depto_ocu": [data.get('depto_ocu', 1)],
         }
 
         input_df = pd.DataFrame(input_data)

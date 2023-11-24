@@ -177,7 +177,8 @@ function ModeloForm() {
 
     if (response.ok) {
       const data = await response.json();
-      alert(`Predicción: ${data}`);  // Mostrando el resultado en un popup
+      console.log(data)
+      alert(`Predicción: ${data.prediccion}`);  // Mostrando el resultado en un popup
       // alert(`Predicción: ${data.prediccion}`);  // Mostrando el resultado en un popup
     } else {
       const data = await response.json();

@@ -67,6 +67,7 @@ def getModel():
         print(pred)
         pred = int(pred)
         nombre_predicho = codigos_vehiculos.get(pred, 'Desconocido')
+        print(nombre_predicho)
         return jsonify({'prediccion': nombre_predicho})
     except Exception as e:
         return jsonify({'error': str(e)}), 500

@@ -34,8 +34,8 @@ function ExtrasComponent() {
 }
 
 const cityMapping: { [key: string]: number } = {
-  'Sobrio': 0,
-  'Ebrio': 1,
+  'Sobrio': 1,
+  'Ebrio': 2,
   'No conciderar': 9
 };
 
